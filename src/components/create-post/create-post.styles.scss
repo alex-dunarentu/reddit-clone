@@ -1,0 +1,41 @@
+.AddPost {
+  width: 30vw;
+  padding: 10px;
+  height: fit-content;
+  border: 1px solid rgb(235, 237, 240);
+  background-color: white;
+  margin: 4rem 0 0 1rem;
+
+  .SubmitButton {
+    border: 1px solid #818e99;
+    background-color: white;
+    border-radius: 5px;
+  }
+  .SubmitButton:hover {
+    border: 1px solid #818e99;
+    background-color: #818e99;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  .CreatePostInput {
+    border: 1px solid #818e99;
+    border-radius: 4px;
+  }
+}
+
+.CreatePostTitle {
+  margin: 10px 0;
+  label {
+    display: block;
+  }
+}
+
+.CreatePostText {
+  textarea {
+    height: 100px;
+    width: 100%;
+    border: 1px solid #818e99;
+    border-radius: 4px;
+  }
+}

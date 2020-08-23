@@ -1,4 +1,4 @@
-let POSTS = [
+let POSTS_DATA = [
   {
     title: "Peak Entertainment",
     description: "ancient romans watching a guy get mauled by a lion",
@@ -51,4 +51,4 @@ let POSTS = [
     id: 6,
   },
 ];
-export default POSTS;
+export default POSTS_DATA;
