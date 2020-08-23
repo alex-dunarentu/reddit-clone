@@ -15,12 +15,12 @@ class App extends React.Component {
       newPostDescription: "",
     };
   }
+
   handleSubmit = (event) => {
     const { newPostTitle: title, newPostDescription: description } = this.state;
     let ok = 1,
       arr = this.state.posts;
     for (let i = 0; i < arr.length; i++) {
-      console.log("ok");
       if (arr[i].title === title && arr[i].description === description) {
         ok = 0;
         alert("Post already exists!");
@@ -46,6 +46,25 @@ class App extends React.Component {
     event.preventDefault();
   };
 
+  handleVotePos = (id) => {
+    let arr = this.state;
+    for (let i = 0; i < arr.posts.length; i++) {
+      if (arr.posts[i].id === id) {
+        arr.posts[i].votes += 1;
+        this.setState({ arr });
+      }
+    }
+  };
+  handleVoteNeg = (id) => {
+    let arr = this.state;
+    for (let i = 0; i < arr.posts.length; i++) {
+      if (arr.posts[i].id === id) {
+        arr.posts[i].votes -= 1;
+        this.setState({ arr });
+      }
+    }
+  };
+
   handleTitle = (event) => {
     this.setState({ newPostTitle: event.target.value });
   };
@@ -60,7 +79,11 @@ class App extends React.Component {
       <div className="App">
         <Header />
         <div className="MainContent">
-          <Posts posts={posts} />
+          <Posts
+            posts={posts}
+            handleVotePos={this.handleVotePos}
+            handleVoteNeg={this.handleVoteNeg}
+          />
           <CreatePost
             handleTitle={this.handleTitle}
             handleText={this.handleText}
