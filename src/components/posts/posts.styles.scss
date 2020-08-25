@@ -1,15 +1,14 @@
 .Posts {
-  min-height: 100vh;
   background-color: white;
   margin: 4rem 1rem 0 0;
   border: 1px solid rgb(235, 237, 240);
-  max-width: 75%;
+  max-width: 60%;
 }
 .Arrow {
   border: solid rgb(114, 114, 114);
   border-width: 0 3px 3px 0;
   display: inline-block;
-  padding: 7px;
+  padding: 5px;
   cursor: pointer;
 }
 .Up {
@@ -23,13 +22,14 @@
 }
 
 .PostComponent {
+  position: relative;
   display: flex;
-  overflow: hidden;
   height: fit-content;
   .PostVotes {
-    width: 5%;
+    min-width: 5%;
     display: flex;
     flex-direction: column;
+    align-items: center;
     justify-content: space-evenly;
     border: 1px solid rgb(235, 237, 240);
 
@@ -39,28 +39,38 @@
   }
   .PostDescription {
     border: 1px solid rgb(235, 237, 240);
+    width: 95%;
     .PostTitle {
-      font-size: 1.2rem;
-      h1 {
-        font-size: 1.5rem;
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
-      }
+      font-size: 1rem;
+      margin: 0.5rem;
+      color: black;
+      font-weight: 400;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
     }
     .PostText {
-      color: gray;
-      h2 {
-        font-size: 1rem;
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        margin: 5px 0;
-      }
-      svg {
-        margin: 0;
-        padding: 0;
-      }
+      color: #818e99;
+      font-weight: 400;
+      font-size: 0.8rem;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      margin: 0.5rem;
+    }
+    .DeleteIcon {
+      display: block;
+      font-size: 0.8rem;
+      appearance: none;
+      background: none;
+      border: none;
+      padding: 0;
+      margin-left: 0.5rem;
+      color: #818e99;
+    }
+    .DeleteIcon:hover {
+      color: black;
+      cursor: pointer;
     }
   }
 }

@@ -4,10 +4,10 @@ import "./header.styles.scss";
 const Header = () => {
   return (
     <div className="HeaderComponent">
-      <h1>reddit clone</h1>
-      <ul>
-        <li>Log In</li>
-        <li>Sign Up</li>
+      <h1 className="HeaderTitle">reddit clone</h1>
+      <ul className="UserOptions">
+        <li className="User">Log In</li>
+        <li className="User">Sign Up</li>
       </ul>
     </div>
   );
