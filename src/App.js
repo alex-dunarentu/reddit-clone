@@ -72,6 +72,17 @@ class App extends React.Component {
   handleText = (event) => {
     this.setState({ newPostDescription: event.target.value });
   };
+  handleDelete = (id, event) => {
+    let newPosts = this.state.posts;
+    for (let i = 0; i < newPosts.length; i++) {
+      if (newPosts[i].id === id) {
+        newPosts.splice(i, 1);
+      }
+    }
+    this.setState({
+      posts: newPosts,
+    });
+  };
 
   render() {
     const { posts, newPostTitle, newPostDescription } = this.state;
@@ -81,6 +92,7 @@ class App extends React.Component {
         <div className="MainContent">
           <Posts
             posts={posts}
+            handleDelete={this.handleDelete}
             handleVotePos={this.handleVotePos}
             handleVoteNeg={this.handleVoteNeg}
           />

@@ -1,7 +1,7 @@
 import React from "react";
 import "./posts.styles.scss";
 
-const Posts = ({ posts, handleVotePos, handleVoteNeg }) => {
+const Posts = ({ posts, handleDelete, handleVotePos, handleVoteNeg }) => {
   posts.sort(function (a, b) {
     return b.votes - a.votes;
   });
@@ -25,7 +25,12 @@ const Posts = ({ posts, handleVotePos, handleVoteNeg }) => {
           <div className="PostDescription">
             <h1 className="PostTitle">{title}</h1>
             <h2 className="PostText">{description}</h2>
-            <button type="delete" className="DeleteIcon">
+            <button
+              type="button"
+              value={id}
+              onClick={(e) => handleDelete(id, e)}
+              className="DeleteIcon"
+            >
               delete post
             </button>
           </div>

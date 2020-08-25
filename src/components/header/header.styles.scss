@@ -4,7 +4,7 @@
   z-index: 1;
   width: 100%;
   top: 0;
-  height: 4rem;
+  height: 3rem;
   background-color: white;
   justify-content: space-between;
   align-items: center;
@@ -12,6 +12,7 @@
   box-shadow: rgba(0, 0, 0, 0.05) 0px 4px 12px;
   .HeaderTitle {
     margin-left: 2rem;
+    font-size: 1.5rem;
     color: #818e99;
   }
   .UserOptions {
