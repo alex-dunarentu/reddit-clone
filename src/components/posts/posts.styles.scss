@@ -74,3 +74,17 @@
     }
   }
 }
+@media (max-width: 40rem) {
+  .Posts {
+    background-color: white;
+    margin: 4rem 1rem 0 0;
+    border: 1px solid rgb(235, 237, 240);
+    width: 100%;
+    .PostVotes {
+      min-width: 7%;
+    }
+    .PostDescription {
+      width: 93%;
+    }
+  }
+}

@@ -4,3 +4,10 @@
   margin: 4rem auto;
   justify-content: space-evenly;
 }
+
+@media (max-width: 40rem) {
+  .MainContent {
+    flex-direction: column;
+    flex-direction: column-reverse;
+  }
+}

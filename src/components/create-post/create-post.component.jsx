@@ -7,13 +7,22 @@ const CreatePost = ({
   handleSubmit,
   newPostDescription,
   newPostTitle,
+  currentUser,
 }) => {
   return (
     <div className="AddPost">
       <div className="CreatePostComponent">
         <form onSubmit={handleSubmit}>
           <div className="CreatePostTitle">
-            <label>Create a new post:</label>
+            {currentUser ? (
+              <label>
+                Hello{" "}
+                <span className="UserName">{currentUser.displayName}</span>,
+                create a new post:
+              </label>
+            ) : (
+              <label>Create a new post: </label>
+            )}
             <input
               className="CreatePostInput"
               type="text"

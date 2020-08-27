@@ -99,6 +99,7 @@ class HomePage extends React.Component {
           handleSubmit={this.handleSubmit}
           newPostTitle={newPostTitle}
           newPostDescription={newPostDescription}
+          currentUser={this.props.currentUser}
         />
       </div>
     );

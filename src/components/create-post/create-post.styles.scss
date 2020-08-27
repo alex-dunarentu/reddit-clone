@@ -4,7 +4,7 @@
   height: fit-content;
   border: 1px solid rgb(235, 237, 240);
   background-color: white;
-  margin: 4rem 0 0 1rem;
+  margin-top: 4rem;
 
   .SubmitButton {
     border: 1px solid #818e99;
@@ -29,6 +29,10 @@
   label {
     display: block;
   }
+  .UserName {
+    color: #818e99;
+    font-weight: bold;
+  }
 }
 
 .CreatePostText {
@@ -37,5 +41,11 @@
     width: 100%;
     border: 1px solid #818e99;
     border-radius: 4px;
+  }
+}
+
+@media (max-width: 40rem) {
+  .AddPost {
+    width: 100%;
   }
 }

@@ -1,3 +1,6 @@
+* {
+  text-decoration: none;
+}
 .HeaderComponent {
   display: flex;
   position: fixed;
@@ -14,6 +17,10 @@
     margin-left: 2rem;
     font-size: 1.5rem;
     color: #818e99;
+  }
+  .HeaderTitle:hover {
+    font-weight: bold;
+    text-decoration: underline;
   }
   .UserOptions {
     list-style-type: none;
