@@ -1,0 +1,21 @@
+.SignIn {
+  width: 50vw;
+  .Title {
+    color: #818e99;
+  }
+  .SubTitle {
+    color: gray;
+  }
+  .Buttons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+}
+
+@media (min-width: 40rem) {
+  .SignIn {
+    width: 30vw;
+  }
+}
