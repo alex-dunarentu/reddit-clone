@@ -3,8 +3,8 @@ import { Route, Switch } from "react-router-dom";
 import "./App.scss";
 import HomePage from "./pages/homepage/homepage.component";
 import Header from "./components/header/header.component";
-import SignInPage from "./pages/sign-in/sign-in.component";
-import SignUpPage from "./pages/sign-up/sign-up.component";
+import SignInPage from "./pages/sign-in-page/sign-in-page.component";
+import SignUpPage from "./pages/sign-up-page/sign-up-page.component";
 import { auth, createUserProfileDocument } from "./firebase/firebase.utils";
 
 class App extends React.Component {
