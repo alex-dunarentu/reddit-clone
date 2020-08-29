@@ -12,6 +12,7 @@ class HomePage extends React.Component {
       posts: [...POSTS_DATA],
       newPostTitle: "",
       newPostDescription: "",
+      showCreatePost: false,
     };
   }
 
@@ -40,7 +41,9 @@ class HomePage extends React.Component {
         posts: newPosts,
         newPostTitle: "",
         newPostDescription: "",
+        showCreatePost: false,
       });
+      // this.props.addPost(newPosts);
     }
     event.preventDefault();
   };
@@ -82,25 +85,50 @@ class HomePage extends React.Component {
       posts: newPosts,
     });
   };
-
+  handleButtonClick = () => {
+    this.setState({
+      showCreatePost: true,
+    });
+  };
+  handleBackdrop = () => {
+    this.setState({
+      showCreatePost: false,
+    });
+  };
   render() {
-    const { posts, newPostTitle, newPostDescription } = this.state;
+    const {
+      posts,
+      newPostTitle,
+      newPostDescription,
+      showCreatePost,
+    } = this.state;
+    const createPostClassName = `AddPost ${showCreatePost ? "IsActive" : ""} `;
+    const backdropClassName = `BackDrop ${showCreatePost ? "IsActive" : ""} `;
     return (
-      <div className="MainContent">
-        <Posts
-          posts={posts}
-          handleDelete={this.handleDelete}
-          handleVotePos={this.handleVotePos}
-          handleVoteNeg={this.handleVoteNeg}
-        />
-        <CreatePost
-          handleTitle={this.handleTitle}
-          handleText={this.handleText}
-          handleSubmit={this.handleSubmit}
-          newPostTitle={newPostTitle}
-          newPostDescription={newPostDescription}
-          currentUser={this.props.currentUser}
-        />
+      <div className="HomePage">
+        <div className={backdropClassName} onClick={this.handleBackdrop} />
+        <div className="MainContent">
+          <Posts
+            posts={posts}
+            handleDelete={this.handleDelete}
+            handleVotePos={this.handleVotePos}
+            handleVoteNeg={this.handleVoteNeg}
+          />
+          <CreatePost
+            handleTitle={this.handleTitle}
+            handleText={this.handleText}
+            handleSubmit={this.handleSubmit}
+            newPostTitle={newPostTitle}
+            newPostDescription={newPostDescription}
+            currentUser={this.props.currentUser}
+            createPostClassName={createPostClassName}
+          />
+        </div>
+        <div className="CreatePostButton">
+          <button type="button" onClick={this.handleButtonClick}>
+            CREATE POST
+          </button>
+        </div>
       </div>
     );
   }

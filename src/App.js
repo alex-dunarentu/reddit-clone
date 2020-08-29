@@ -5,7 +5,8 @@ import HomePage from "./pages/homepage/homepage.component";
 import Header from "./components/header/header.component";
 import SignInPage from "./pages/sign-in-page/sign-in-page.component";
 import SignUpPage from "./pages/sign-up-page/sign-up-page.component";
-import { auth, createUserProfileDocument } from "./firebase/firebase.utils";
+import PostPage from "./pages/post-page/post-page.component";
+//import { auth, createUserProfileDocument } from "./firebase/firebase.utils";
 
 class App extends React.Component {
   constructor(props) {
@@ -16,7 +17,12 @@ class App extends React.Component {
     };
   }
 
-  unsubscribeFromAuth = null;
+  /* addPost = (post) => {
+    this.setState({
+      posts:[...this.state.posts, post]
+    })
+  } */
+  /* unsubscribeFromAuth = null;
 
   componentDidMount() {
     this.unsubscribeFromAuth = auth.onAuthStateChanged(async (userAuth) => {
@@ -38,11 +44,11 @@ class App extends React.Component {
 
   componentWillUnmount() {
     this.unsubscribeFromAuth();
-  }
+  } */
 
   render() {
     return (
-      <div>
+      <div className="RedditClone">
         <Header currentUser={this.state.currentUser} />
         <Switch>
           <Route
@@ -54,6 +60,7 @@ class App extends React.Component {
           />
           <Route exact path="/signin" component={SignInPage} />
           <Route exact path="/signup" component={SignUpPage} />
+          <Route path="/posts" component={PostPage} />
         </Switch>
       </div>
     );

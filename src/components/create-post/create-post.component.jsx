@@ -8,9 +8,10 @@ const CreatePost = ({
   newPostDescription,
   newPostTitle,
   currentUser,
+  createPostClassName,
 }) => {
   return (
-    <div className="AddPost">
+    <div className={createPostClassName}>
       <div className="CreatePostComponent">
         <form onSubmit={handleSubmit}>
           <div className="CreatePostTitle">

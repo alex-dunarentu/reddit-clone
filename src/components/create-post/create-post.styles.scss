@@ -9,18 +9,15 @@
   .SubmitButton {
     border: 1px solid #818e99;
     background-color: white;
-    border-radius: 5px;
   }
   .SubmitButton:hover {
     border: 1px solid #818e99;
     background-color: #818e99;
     color: white;
     cursor: pointer;
-    border-radius: 5px;
   }
   .CreatePostInput {
     border: 1px solid #818e99;
-    border-radius: 4px;
   }
 }
 
@@ -40,12 +37,26 @@
     height: 100px;
     width: 100%;
     border: 1px solid #818e99;
-    border-radius: 4px;
   }
 }
 
 @media (max-width: 40rem) {
   .AddPost {
-    width: 100%;
+    position: fixed;
+    z-index: 10;
+    height: 0;
+    overflow: hidden;
+    top: 30%;
+    width: 95%;
+    padding: 0;
+    margin: auto;
+    left: 0;
+    right: 0;
+    transform: translateX(-100%);
+    transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
+  }
+  .AddPost.IsActive {
+    transform: translateX(0);
+    height: auto;
   }
 }

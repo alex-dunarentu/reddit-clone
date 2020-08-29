@@ -1,15 +1,15 @@
-import firebase from "firebase/app";
+/* import firebase from "firebase/app";
 import "firebase/firestore";
 import "firebase/auth";
 
 const config = {
-  apiKey: "AIzaSyDJRhqfo2x680YxaQeZzZx2SaQtrniapp8",
-  authDomain: "reddit-clone-a1da3.firebaseapp.com",
-  databaseURL: "https://reddit-clone-a1da3.firebaseio.com",
-  projectId: "reddit-clone-a1da3",
-  storageBucket: "reddit-clone-a1da3.appspot.com",
-  messagingSenderId: "658370725778",
-  appId: "1:658370725778:web:85c2a4bbb558f09148634b",
+  apiKey: "",
+  authDomain: "",
+  databaseURL: "",
+  projectId: "",
+  storageBucket: "",
+  messagingSenderId: "",
+  appId: "",
 };
 
 export const createUserProfileDocument = async (userAuth, additionalData) => {
@@ -43,3 +43,4 @@ provider.setCustomParameters({ prompt: "select_account" });
 export const signInWithGoogle = () => auth.signInWithPopup(provider);
 
 export default firebase;
+ */

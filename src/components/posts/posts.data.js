@@ -14,6 +14,14 @@ let POSTS_DATA = [
     id: 1,
   },
   {
+    title:
+      "Apple's new iPhone operating system is making it harder for Facebook to track people, and Facebook says it will decimate part of its business",
+    description:
+      "Facebook is saying that Apple’s planned privacy protections will severely damage part of its business.",
+    votes: 53,
+    id: 8,
+  },
+  {
     title: "Apple says Epic Games CEO wanted a side deal for Fortnite",
     description:
       "we don't like that we've created artificial monopolies and people want to use their own app stores.",
@@ -53,8 +61,14 @@ let POSTS_DATA = [
   {
     title: "What starts with a 't' ends with a 't' and is full of 't' ?",
     description: "A teapot.",
-    votes: -15,
+    votes: -7,
     id: 7,
+  },
+  {
+    title: "To the man in the wheelchair that stole my camo jacket",
+    description: "You can hide but you can’t run",
+    votes: -7,
+    id: 9,
   },
 ];
 export default POSTS_DATA;

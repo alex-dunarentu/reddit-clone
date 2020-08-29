@@ -1,13 +1,44 @@
+.BackDrop {
+  position: fixed;
+  display: none;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 2;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+}
+.BackDrop.IsActive {
+  display: block;
+}
 .MainContent {
   display: flex;
   width: 90%;
   margin: 4rem auto;
   justify-content: space-evenly;
 }
-
+.CreatePostButton {
+  display: none;
+}
 @media (max-width: 40rem) {
   .MainContent {
     flex-direction: column;
     flex-direction: column-reverse;
+  }
+  .CreatePostButton {
+    display: flex;
+    height: 5rem;
+    margin-bottom: 2rem;
+    justify-content: center;
+    align-items: center;
+    button {
+      cursor: pointer;
+      width: 50%;
+      height: 100%;
+      font-size: 1.5rem;
+      color: #818e99;
+      background-color: white;
+      border: 1px solid #818e99;
+    }
   }
 }
