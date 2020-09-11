@@ -9,7 +9,6 @@ class HomePage extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      posts: [...POSTS_DATA],
       newPostTitle: "",
       newPostDescription: "",
       showCreatePost: false,
@@ -18,10 +17,10 @@ class HomePage extends React.Component {
 
   handleSubmit = (event) => {
     const { newPostTitle: title, newPostDescription: description } = this.state;
-    let ok = 1,
-      arr = this.state.posts;
-    for (let i = 0; i < arr.length; i++) {
-      if (arr[i].title === title && arr[i].description === description) {
+    let ok = 1;
+    let { posts } = this.props;
+    for (let i = 0; i < posts.length; i++) {
+      if (posts[i].title === title && posts[i].description === description) {
         ok = 0;
         alert("Post already exists!");
         this.setState({
@@ -36,37 +35,39 @@ class HomePage extends React.Component {
       //const { t, newPostDescription } = this.state;
       const newPost = { title, description, votes: 0, id: uuidv4() };
       //const newPost = { title: newPostTitle, description: newPostDescription, votes: 0, id: uuidv4() };
-      const newPosts = [...this.state.posts, newPost];
       this.setState({
-        posts: newPosts,
+        //posts: newPosts,
         newPostTitle: "",
         newPostDescription: "",
         showCreatePost: false,
       });
-      // this.props.addPost(newPosts);
+      this.props.addPost(newPost);
     }
     event.preventDefault();
   };
 
   handleVotePos = (id) => {
-    let arr = this.state;
-    for (let i = 0; i < arr.posts.length; i++) {
-      if (arr.posts[i].id === id) {
-        arr.posts[i].votes += 1;
-        this.setState({ arr });
+    let { posts } = this.props;
+    for (let i = 0; i < posts.length; i++) {
+      if (posts[i].id === id) {
+        posts[i].votes += 1;
       }
     }
+    this.props.updatePosts(posts);
   };
   handleVoteNeg = (id) => {
-    let arr = this.state;
-    for (let i = 0; i < arr.posts.length; i++) {
-      if (arr.posts[i].id === id) {
-        arr.posts[i].votes -= 1;
-        this.setState({ arr });
+    let { posts } = this.props;
+    for (let i = 0; i < posts.length; i++) {
+      if (posts[i].id === id) {
+        posts[i].votes -= 1;
       }
     }
+    this.props.updatePosts(posts);
   };
 
+  handleDelete = (id, event) => {
+    this.props.deletePost(id);
+  };
   handleTitle = (event) => {
     this.setState({ newPostTitle: event.target.value });
   };
@@ -74,17 +75,7 @@ class HomePage extends React.Component {
   handleText = (event) => {
     this.setState({ newPostDescription: event.target.value });
   };
-  handleDelete = (id, event) => {
-    let newPosts = this.state.posts;
-    for (let i = 0; i < newPosts.length; i++) {
-      if (newPosts[i].id === id) {
-        newPosts.splice(i, 1);
-      }
-    }
-    this.setState({
-      posts: newPosts,
-    });
-  };
+
   handleButtonClick = () => {
     this.setState({
       showCreatePost: true,
@@ -96,12 +87,7 @@ class HomePage extends React.Component {
     });
   };
   render() {
-    const {
-      posts,
-      newPostTitle,
-      newPostDescription,
-      showCreatePost,
-    } = this.state;
+    const { newPostTitle, newPostDescription, showCreatePost } = this.state;
     const createPostClassName = `AddPost ${showCreatePost ? "IsActive" : ""} `;
     const backdropClassName = `BackDrop ${showCreatePost ? "IsActive" : ""} `;
     return (
@@ -109,7 +95,7 @@ class HomePage extends React.Component {
         <div className={backdropClassName} onClick={this.handleBackdrop} />
         <div className="MainContent">
           <Posts
-            posts={posts}
+            posts={this.props.posts}
             handleDelete={this.handleDelete}
             handleVotePos={this.handleVotePos}
             handleVoteNeg={this.handleVoteNeg}

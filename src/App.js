@@ -6,6 +6,7 @@ import Header from "./components/header/header.component";
 import SignInPage from "./pages/sign-in-page/sign-in-page.component";
 import SignUpPage from "./pages/sign-up-page/sign-up-page.component";
 import PostPage from "./pages/post-page/post-page.component";
+import POSTS_DATA from "./components/posts/posts.data";
 //import { auth, createUserProfileDocument } from "./firebase/firebase.utils";
 
 class App extends React.Component {
@@ -13,15 +14,16 @@ class App extends React.Component {
     super(props);
 
     this.state = {
+      posts: [...POSTS_DATA],
       currentUser: null,
     };
   }
 
-  /* addPost = (post) => {
+  addPost = (post) => {
     this.setState({
-      posts:[...this.state.posts, post]
-    })
-  } */
+      posts: [...this.state.posts, post],
+    });
+  };
   /* unsubscribeFromAuth = null;
 
   componentDidMount() {
@@ -46,6 +48,22 @@ class App extends React.Component {
     this.unsubscribeFromAuth();
   } */
 
+  updatePosts = (p) => {
+    this.setState({ posts: p });
+  };
+
+  deletePost = (id) => {
+    let newPosts = this.state.posts;
+    for (let i = 0; i < newPosts.length; i++) {
+      if (newPosts[i].id === id) {
+        newPosts.splice(i, 1);
+      }
+    }
+    this.setState({
+      posts: newPosts,
+    });
+  };
+
   render() {
     return (
       <div className="RedditClone">
@@ -55,7 +73,14 @@ class App extends React.Component {
             exact
             path="/"
             render={(props) => (
-              <HomePage {...props} currentUser={this.state.currentUser} />
+              <HomePage
+                {...props}
+                currentUser={this.state.currentUser}
+                addPost={this.addPost}
+                posts={this.state.posts}
+                updatePosts={this.updatePosts}
+                deletePost={this.deletePost}
+              />
             )}
           />
           <Route exact path="/signin" component={SignInPage} />
@@ -66,4 +91,5 @@ class App extends React.Component {
     );
   }
 }
+
 export default App;
