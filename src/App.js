@@ -85,7 +85,7 @@ class App extends React.Component {
           />
           <Route exact path="/signin" component={SignInPage} />
           <Route exact path="/signup" component={SignUpPage} />
-          <Route path="/posts" component={PostPage} />
+          <Route path="/posts/:id" render={(props) => <PostPage {...props} posts={this.state.posts} />} />
         </Switch>
       </div>
     );

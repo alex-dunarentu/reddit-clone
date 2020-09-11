@@ -1,13 +1,12 @@
 import React from "react";
 import Posts from "../../components/posts/posts.component";
 import CreatePost from "../../components/create-post/create-post.component";
-import POSTS_DATA from "../../components/posts/posts.data";
 import { v4 as uuidv4 } from "uuid";
 import "./homepage.styles.scss";
 
 class HomePage extends React.Component {
-  constructor(props) {
-    super(props);
+  constructor() {
+    super();
     this.state = {
       newPostTitle: "",
       newPostDescription: "",
