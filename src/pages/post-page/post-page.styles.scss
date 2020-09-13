@@ -22,9 +22,23 @@
     width: 100%;
     font-family: monospace;
   }
+  .BackButton {
+    position: absolute;
+    left: -50px;
+    color: gray;
+    appearance: none;
+    border: 1px solid rgb(235, 237, 240);
+    height: 40px;
+    width: 40px;
+    background: white;
+    font-size: 2rem;
+  }
 }
 @media (max-width: 40rem) {
   .Post {
     width: 90%;
+    .BackButton {
+      display: none;
+    }
   }
 }

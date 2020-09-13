@@ -1,5 +1,6 @@
 import React from "react";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
+
 import "./post-page.styles.scss";
 
 const PostPage = ({ posts }) => {
@@ -14,6 +15,11 @@ const PostPage = ({ posts }) => {
   }
   return (
     <div className="Post">
+      <Link to="/">
+        <button type="back" className="BackButton">
+          &#8249;
+        </button>
+      </Link>
       <div className="Title">{title}</div>
       <div className="Description">{description}</div>
       <div className="Votes">votes:{votes}</div>
