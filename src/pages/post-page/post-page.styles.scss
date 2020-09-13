@@ -1,3 +1,30 @@
 .Post {
-  margin-top: 5rem;
+  position: relative;
+  margin: 8rem auto 0 auto;
+  width: 50%;
+  min-height: 300px;
+  border: 1px solid rgb(235, 237, 240);
+  background-color: white;
+  .Title {
+    padding: 1rem;
+    font-size: 20px;
+    border-bottom: 1px solid #ebedf0;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 4px 12px;
+  }
+  .Description {
+    padding: 1rem;
+    font-size: 14px;
+  }
+  .Votes {
+    position: absolute;
+    text-align: center;
+    bottom: 0;
+    width: 100%;
+    font-family: monospace;
+  }
+}
+@media (max-width: 40rem) {
+  .Post {
+    width: 90%;
+  }
 }

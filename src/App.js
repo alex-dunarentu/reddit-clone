@@ -10,8 +10,8 @@ import POSTS_DATA from "./components/posts/posts.data";
 //import { auth, createUserProfileDocument } from "./firebase/firebase.utils";
 
 class App extends React.Component {
-  constructor(props) {
-    super(props);
+  constructor() {
+    super();
 
     this.state = {
       posts: [...POSTS_DATA],
@@ -85,7 +85,10 @@ class App extends React.Component {
           />
           <Route exact path="/signin" component={SignInPage} />
           <Route exact path="/signup" component={SignUpPage} />
-          <Route path="/posts/:id" render={(props) => <PostPage {...props} posts={this.state.posts} />} />
+          <Route
+            path="/posts/:id"
+            render={(props) => <PostPage {...props} posts={this.state.posts} />}
+          />
         </Switch>
       </div>
     );
