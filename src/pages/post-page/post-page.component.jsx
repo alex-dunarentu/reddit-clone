@@ -15,7 +15,7 @@ const PostPage = ({ posts }) => {
   }
   return (
     <div className="Post">
-      <Link to="/">
+      <Link to="/reddit-clone">
         <button type="back" className="BackButton">
           &#8249;
         </button>
