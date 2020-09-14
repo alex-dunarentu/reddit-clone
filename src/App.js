@@ -71,7 +71,7 @@ class App extends React.Component {
         <Switch>
           <Route
             exact
-            path="/"
+            path="/reddit-clone/posts"
             render={(props) => (
               <HomePage
                 {...props}
@@ -83,10 +83,10 @@ class App extends React.Component {
               />
             )}
           />
-          <Route exact path="/signin" component={SignInPage} />
-          <Route exact path="/signup" component={SignUpPage} />
+          <Route exact path="/reddit-clone/signin" component={SignInPage} />
+          <Route exact path="/reddit-clone/signup" component={SignUpPage} />
           <Route
-            path="/posts/:id"
+            path="/reddit-clone/posts/:id"
             render={(props) => <PostPage {...props} posts={this.state.posts} />}
           />
         </Switch>

@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 const Header = (/* { currentUser } */) => {
   return (
     <div className="HeaderComponent">
-      <Link to="/">
+      <Link to="/reddit-clone/posts">
         <h1 className="HeaderTitle">reddit clone</h1>
       </Link>
       <ul className="UserOptions">
@@ -19,10 +19,10 @@ const Header = (/* { currentUser } */) => {
             <li className="User">Sign In</li>
           </Link>
         )} */}
-        <Link to="/signin">
+        <Link to="/reddit-clone/signin">
           <li className="User">Sign In</li>
         </Link>
-        <Link to="/signup">
+        <Link to="/reddit-clone/signup">
           <li className="User">Sign Up</li>
         </Link>
       </ul>

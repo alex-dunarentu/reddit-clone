@@ -24,7 +24,7 @@ const Posts = ({ posts, handleDelete, handleVotePos, handleVoteNeg }) => {
             ></i>
           </div>
           <div className="PostDescription">
-            <Link to={`/posts/${id}`}>
+            <Link to={`/reddit-clone/posts/${id}`}>
               <h1 className="PostTitle">{title}</h1>
             </Link>
             <h2 className="PostText">{description}</h2>
