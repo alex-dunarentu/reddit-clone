@@ -44,7 +44,7 @@
   .AddPost {
     position: fixed;
     z-index: 10;
-    height: 0;
+    height: auto;
     overflow: hidden;
     top: 30%;
     width: 95%;
@@ -52,7 +52,7 @@
     margin: auto;
     left: 0;
     right: 0;
-    transform: translateX(-100%);
+    transform: translateX(-120%);
     transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
   }
   .AddPost.IsActive {
