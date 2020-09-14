@@ -71,7 +71,7 @@ class App extends React.Component {
         <Switch>
           <Route
             exact
-            path="/reddit-clone/posts"
+            path="/reddit-clone"
             render={(props) => (
               <HomePage
                 {...props}

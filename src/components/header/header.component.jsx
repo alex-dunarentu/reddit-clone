@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 const Header = (/* { currentUser } */) => {
   return (
     <div className="HeaderComponent">
-      <Link to="/reddit-clone/posts">
+      <Link to="/reddit-clone">
         <h1 className="HeaderTitle">reddit clone</h1>
       </Link>
       <ul className="UserOptions">
