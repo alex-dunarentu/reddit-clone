@@ -7,7 +7,8 @@ const PostPage = ({ posts }) => {
   let { id } = useParams();
   let title, description, votes;
   for (let i = 0; i < posts.length; i++) {
-    if (parseInt(id, 10) === posts[i].id) {
+    if (id == posts[i].id) {
+      console.log("ok");
       title = posts[i].title;
       description = posts[i].description;
       votes = posts[i].votes;
