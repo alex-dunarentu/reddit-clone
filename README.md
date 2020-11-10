@@ -2,7 +2,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Discussion app
 
-Reddit-clone that lets you upvote, downvote, remove and create a post. It also includes user authentication using firebase.
+[Reddit-clone](https://alex-dunarentu.github.io/reddit-clone/) that lets you upvote, downvote, remove and create a post. It also includes user authentication using firebase.
 
 ## Available Scripts
 
